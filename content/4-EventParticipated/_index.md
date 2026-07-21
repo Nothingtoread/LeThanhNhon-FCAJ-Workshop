@@ -6,39 +6,41 @@ chapter: false
 pre: " <b> 4. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** for your report, including this warning.
-{{% /notice %}}
-
-> In this section, you should list and describe in detail the events you have participated in during your internship or work experience.  
-> 
-> Each event should be presented in the format Event 1, Event 2, Event 3…, along with the following details:
-> * Event name
-> * Date and time
-> * Location (if applicable)
-> * Your role in the event (attendee, event support, speaker, etc.)
-> * A brief description of the event’s content and main activities
-> * Outcomes or value gained (lessons learned, new skills, contribution to the team/project)
-> * This listing helps demonstrate your actual participation as well as the soft skills and experience you have gained from each event.
-
-During my internship, I participated in two events. Each one was a memorable experience that provided new, interesting, and useful knowledge, along with gifts and wonderful moments.
+During my internship, I participated in three events organized by AWS Vietnam and the AWS First Cloud AI Journey (FCAJ) community. Each event connected classroom learning with industry perspectives on cloud architecture, AI, and career development.
 
 ### [Event 1](4.1-Event1/)  
-&emsp;**Event Name:** GenAI-powered App-DB Modernization workshop  
+&emsp;**Event name:** AWS Enterprise Cloud Architectures & Industry Application — Swinburne Vietnam Study Tour  
 
-&emsp;**Date & Time:** 09:00, August 13, 2025  
+&emsp;**Date:** 2026 (third annual Swinburne–AWS study tour)  
 
-&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
+&emsp;**Location:** Amazon Web Services Vietnam  
 
 &emsp;**Role:** Attendee  
+
+&emsp;**Summary:** Study tour with Swinburne Vietnam students (including Cần Thơ campus) featuring AWS, Renova Cloud, and Cloud Kinetics speakers on cloud careers, data engineering in production, soft skills, and responsible AI use.
 
 ---
 
 ### [Event 2](4.2-Event2/)  
-&emsp;**Event Name:** GenAI-powered App-DB Modernization workshop  
+&emsp;**Event name:** FCAJ Community Day / AWS Community Day  
 
-&emsp;**Date & Time:** 09:00, August 13, 2025  
+&emsp;**Date & time:** 23 May 2026  
 
-&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
+&emsp;**Location:** FCAJ venue (main hall + floor 36)  
 
 &emsp;**Role:** Attendee  
+
+&emsp;**Summary:** Community day with sessions on AI context engineering, Amazon Quick agents, CloudFront flat-rate pricing, hackathon project UTMorph, LLM determinism, and VPBank enterprise multi-agent credit assessment.
+
+---
+
+### [Event 3](4.3-Event3/)  
+&emsp;**Event name:** FCAJ Community Day  
+
+&emsp;**Date & time:** 27 June 2026  
+
+&emsp;**Location:** FCAJ venue  
+
+&emsp;**Role:** Attendee  
+
+&emsp;**Summary:** Sessions on CloudThinker agentic operations, Vietnamese voice AI (R AI), AWS DevOps Agent, Amazon Quick for HR, and secure private MCP integration for enterprise Quick.

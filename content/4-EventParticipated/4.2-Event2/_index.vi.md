@@ -1,125 +1,115 @@
 ---
 title: "Event 2"
-date: 2024-01-01
-weight: 1
+date: 2026-05-23
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+# Báo cáo tham dự: FCAJ Community Day / AWS Community Day
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+**Sự kiện:** FCAJ Community Day (AWS Community Day)  
+**Thời gian:** 23/05/2026  
+**Địa điểm:** Không gian FCAJ (sảnh chính + tầng 36 xem stream)  
+**Vai trò:** Người tham dự
 
-### Mục Đích Của Sự Kiện
+## Tổng quan
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+Community day cả ngày với các phiên về AI, platform engineering, Amazon Quick agents, CloudFront pricing, dự án hackathon, độ xác định của LLM và hệ thống multi-agent đánh giá tín dụng startup tại ngân hàng.
 
-### Danh Sách Diễn Giả
+## Diễn giả
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+| # | Diễn giả | Chức danh / tổ chức |
+|---|----------|---------------------|
+| 1 | **Nguyễn Gia Hưng** | Head of Solution Architect, **AWS Vietnam**; Founder **FCAJ** |
+| 2 | **Tịnh Trương** | Platform Engineer, **GothamX** |
+| 3 | **Hải Anh** | **Pacific Vietnam** |
+| 4 | **Nguyễn Hấn Thịnh** | DevOps Engineer (cựu học viên FCAJ) |
+| 5 | **Uyển** | Đội thắng hackathon — **UTMorph** (cùng **Thảo**, **MCH**) |
+| 6 | **Thảo** | Đồng trình bày, **UTMorph** |
+| 7 | **Đức Đào** | Engineer |
+| 8 | **Vy Lâm** | Engineer, **VPBank** (~2 năm) |
 
-### Nội Dung Nổi Bật
+---
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+## Nội dung trình bày
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+### Nguyễn Gia Hưng — AI, nghề nghiệp & xây dựng sản phẩm thực
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+AI làm rẻ chi phí sản xuất phần mềm → nhu cầu phần mềm tăng (hiệu ứng Jevons) → cầu engineer **ship, vận hành và sửa** sản phẩm AI-assisted tăng. Tuyển dụng ngắn hạn khó do macro AI, nhưng cầu dài hạn cho người build vẫn lớn tại VN nhờ outsourcing toàn cầu.
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+**Đại học một mình chưa đủ:** (1) nền tảng kỹ thuật vững, (2) use case ngành thật, (3) **sản phẩm** chứ không chỉ demo — thứ show được với director ngày đầu. AI nhảy bậc ~4 tháng/lần; trì hoãn học kỹ năng khiến thị trường khó hơn. Ngân hàng vẫn tuyển Dev team lớn nhưng ngày càng cần platform/operations engineer.
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+### Tịnh Trương — Context engineering & platform engineering (GothamX)
 
-#### Domain-Driven Design (DDD)
+Platform engineer: tiến hóa từ DevOps ticket sang nền tảng self-service an toàn ở quy mô lớn.
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+**Context là chìa khóa:** Một chat trộn du lịch, nghề nghiệp và code làm model rối — tách session, scope context có chủ đích. Với banking/fintech, cần **context nội bộ** (blueprint, chuẩn công ty). Giữ ~70% session cho một việc; tiếp nối context thay vì restart.
 
-#### Event-Driven Architecture
+**Nghề nghiệp:** Trong khóa 120–140 người, engineer **áp dụng AI với context domain** nổi bật khi phỏng vấn. Đề cập AI second brain (Obsidian).
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
+### Hải Anh — Amazon Quick & agent BI (Pacific Vietnam)
 
-#### Compute Evolution
+Kinh nghiệm trình bày tại **AWS Summit Singapore** và **Silicon Valley** — giải bài toán người dùng thật hơn seniority.
 
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
+**Vấn đề:** Manager mất nhiều thời gian tổng hợp báo cáo tuần từ file rải rác.
 
-#### Amazon Q Developer
+**Amazon Quick / Quick Desktop:** Tích hợp Microsoft 365, Google, Teams, Gmail… để inbox dữ liệu và nhờ agent phân tích, tạo dashboard, tóm tắt họp. **Agent = LLM + hành động (MCP/tools).** Doanh nghiệp cần shared responsibility bảo mật và quản trị dữ liệu.
 
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+### Nguyễn Hấn Thịnh — CloudFront flat-rate pricing
 
-### Những Gì Học Được
+Trọng tâm **CloudFront flat-rate pricing** — giải quyết hóa đơn CDN pay-as-you-go khó dự báo khi traffic spike (viral, DDoS).
 
-#### Tư Duy Thiết Kế
+**Gói flat-rate** (Free/Pro/Business/Premium): gói WAF, Route 53, credit S3; **overage throttle băng thông**. Một distribution/plan/website; Terraform/CDK có thể mặc định classic pricing.
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+**Chiều sâu kỹ thuật:** PoP toàn cầu + backbone, bảo vệ DDoS nhanh hơn Shield mặc định, tối ưu chi phí S3/ALB, nén, HTTPS/ACM, VPC origin, multi-tier cache, HTTP/3, tái sử dụng TCP, **CloudFront Functions** tại edge.
 
-#### Kiến Trúc Kỹ Thuật
+### Uyển & Thảo — Hành trình hackathon UTMorph (36 giờ)
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
+Đội **UTMorph** (Uyển, Thảo, MCH) thắng **hackathon quốc gia 36 giờ** (~2 tháng trước sự kiện).
 
-#### Chiến Lược Hiện Đại Hóa
+**Ý tưởng:** AI sinh UI nhưng chỉnh màu/khoảng cách phải regenerate — xây editor tương tác trực tiếp UI (kéo component, sửa CSS, lịch sử phiên bản, publish link HTML).
 
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
+**Bài học:** Bắt đầu từ nỗi đau hàng ngày; cắt scope khi thời gian cố định; token limits và mệt gần deadline là rủi ro thật; đồng đội quen thế mạnh nhau ship nhanh hơn.
 
-### Ứng Dụng Vào Công Việc
+**Kiến trúc (Thảo):** Serverless AWS; **pipeline 3 agent** — vision → layout/CSS → code theo design system; demo dashboard + visual editor. Chia việc theo thế mạnh, sync định kỳ; quản lý sức khỏe suốt 36 giờ.
 
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
+### Đức Đào — LLM temperature, độ xác định & thiết kế production
 
-### Trải nghiệm trong event
+Đức Đào trình bày nghiên cứu đã sharing nội bộ công ty về việc **temperature = 0 không đảm bảo output LLM giống hệt** trên API hosted.
 
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
+**Cách model chọn token:** Chấm điểm logits, xếp hạng, sampling — temperature, top-p, top-k điều khiển ngẫu nhiên vs. sáng tạo.
 
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
+**Hiểu lầm:** Team giả định T=0 = deterministic cho automation. Thực tế **tối ưu inference** (kernel, batching, provider) gây variance — demo trên **Bedrock** hai model T=0 cho output khác nhau cùng prompt.
 
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
+**Giảm thiểu:** voting nhiều lần chạy; self-host khi cần kiểm soát; JSON mode; thiết kế downstream chịu biến thể format; thử T≈0.1 thay vì 0; đọc **tài liệu chính thức model** (Claude 3.x) trước khi tune hyperparameter.
 
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
+**Kết luận:** LLM là engine xác suất — thiết kế chịu variance, test kỹ, không assume chuỗi cố định trong production.
 
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
+### Vy Lâm — Multi-agent đánh giá tín dụng startup (VPBank)
 
-#### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
+Vy Lâm mở bằng tư duy kinh doanh: **Ai dùng? Vấn đề gì? Vì sao giải pháp của bạn? Khi nào phù hợp?** (How đã được các phiên trước cover.)
 
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+**Use case:** Thẩm định tín dụng **startup** trong bối cảnh kinh tế startup VN (2024–2026). Mô hình truyền thống cần báo cáo tài chính nhiều năm, lịch sử tín dụng, tài sản thế chấp — startup thường chỉ có traction, team, IP, pitch deck.
+
+**Vì sao multi-agent:** Nhiều loại tài liệu và góc chuyên gia; giới hạn context; một agent không thể đóng vai analyst, market research, đánh giá team và risk officer cùng lúc.
+
+**Vai agent:** Orchestrator (“chủ tọa hội đồng tín dụng”), financial analyst, market researcher, đánh giá team/founder, **risk & compliance** (then chốt ngân hàng).
+
+**Thực tế enterprise (2 năm VPBank):** MCP mở attack surface — tool phải duyệt; Ollama local có thể bị chặn. Guardrails: chống prompt injection, lọc I/O, rotate key, **audit trail** cho quyết định con người. Knowledge transfer từ credit officer senior quan trọng như RAG. Sự cố chatbot: paste ChatGPT vào production không qua review. Tuyển dụng: **nền backend/software engineering** + AI an toàn.
+
+**Lộ trình:** POC → SIT → UAT → pilot → scale; trình bày **ROI**. Triển khai: containerize → **AgentCore** trên AWS; Cognito/JWT/OIDC.
+
+---
+
+## Bài học rút ra
+
+- Context engineering và tư duy production phân biệt dùng AI sở thích vs. kỹ năng tuyển dụng.
+- CloudFront flat-rate kiểm soát chi phí workload public-facing.
+- Hackathon dạy scope, teamwork, pitch demo-first.
+- AI enterprise bị ràng buộc compliance, audit, ROI.
+- LLM workflow phải assume non-determinism kể cả T=0.
+
+## Cảm nhận cá nhân
+
+Sự kiện kết nối tinh thần FCAJ với phiên thực dụng: từ CloudFront billing đến góc nhìn thẳng thắn VPBank về multi-agent dưới quy định ngân hàng. Thông điệp lặp lại: build sản phẩm thật, hiểu những gì mình ship, nói giá trị kinh doanh — không chỉ tên dịch vụ.

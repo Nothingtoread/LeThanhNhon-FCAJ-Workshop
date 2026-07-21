@@ -1,126 +1,126 @@
 ---
 title: "Event 1"
-date: 2024-01-01
+date: 2026-01-01
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
+# AWS Enterprise Cloud Architectures & Industry Application — Attendance Report
 
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+**Event:** AWS Enterprise Cloud Architectures and Industry Application — Swinburne Vietnam Study Tour  
+**Date:** 2026 (third annual Swinburne–AWS study tour; co-hosted with AWS First Cloud AI Journey)  
+**Location:** Amazon Web Services Vietnam  
+**Role:** Attendee (Swinburne Vietnam student participant)
 
-### Event Objectives
+## Event overview
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+A study-tour session for Swinburne Vietnam students (including the Cần Thơ campus cohort) to hear directly from AWS and industry practitioners about cloud career trends, data engineering in production, soft skills, and responsible AI use—extending the **COS2019 Cloud Computing Architecture** course (AWS Academy).
 
-### Speakers
+## Speakers
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+| # | Speaker | Role / organization |
+|---|---------|---------------------|
+| 1 | **Nguyễn Trần Minh Duy** | Industry Liaison Officer, **Swinburne Vietnam** |
+| 2 | **Nguyễn Gia Hưng** | Head of Solution Architect, **Amazon Web Services Vietnam**; Founder, **AWS First Cloud AI Journey (FCAJ)** |
+| 3 | **Bành Cẩm Vĩnh** | Data Engineer, **Renova Cloud**; AWS Community Builder (Data) |
+| 4 | **Như Trần** | Account Manager, **Amazon Web Services Vietnam** (startup segment) |
+| 5 | **Khang Nguyễn (Ma Hoàng Khang)** | Solution Architect, **Cloud Kinetics**; Swinburne Vietnam alumnus (K3, HCMC) |
 
-### Key Highlights
+---
 
-#### Identifying the drawbacks of legacy application architecture
+## Session summaries
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
+### Nguyễn Trần Minh Duy — Opening remarks (Swinburne Vietnam)
 
-#### Transitioning to modern application architecture – Microservices
+Minh Duy welcomed attendees to the **third consecutive year** (2024, 2025, 2026) of Swinburne Vietnam bringing students to AWS, including the **Cần Thơ campus** cohort in 2026. He explained how Swinburne integrates **AWS Academy** through COS2019, giving students foundational cloud knowledge before hearing real industry use cases. The partnership with **FCAJ** helps graduates stay connected, contribute back, and support juniors after entering the workforce.
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+---
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+### Nguyễn Gia Hưng — Cloud market, careers & FCAJ expectations
 
-#### Domain-Driven Design (DDD)
+**Job market reality:** Even intern roles now expect strong foundations (Kubernetes, containers, etc.). Referrals and community networks matter as much as public job boards—many positions fill via connections before appearing on LinkedIn.
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
+**Vietnam cloud growth:** AWS revenue in Vietnam grew roughly 20× in six years. Enterprises adopt cloud-first design; talent hubs (HCMC, Hanoi, Da Nang) expand, including global banks building large IT centers in Vietnam. AWS invests in local talent, infrastructure (Local Zones, CDN, future Region), and skills—not a license-only model.
 
-#### Event-Driven Architecture
+**Career strategy:** Think **role + industry** (e.g. data engineer for banking vs. retail), not role alone. Target one of six major AWS customer industries in Vietnam.
 
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
+**FCAJ expectations:** Side projects should solve real industry problems. Employers value teamwork, ownership, resilience, and **invest in yourself**—continuous learning visible on your profile, not only certificates.
 
-#### Compute Evolution
+**AI & demand:** Cheaper software/AI increases total demand (LED analogy). New roles include forward-deployed engineers and teams that productionize AI-generated products. Build visibility early; opportunities compound unpredictably.
 
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
+---
 
-#### Amazon Q Developer
+### Bành Cẩm Vĩnh — Data engineering: school vs. industry (Renova Cloud)
 
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
+Five years as a data engineer across **Siêu Việt Group → Heineken Vietnam → VNG ZaloPay → Renova Cloud → VPBank (ML track)**.
 
-### Key Takeaways
+**School vs. work gap:**
 
-#### Design Mindset
+| Dimension | University | Enterprise |
+|-----------|------------|------------|
+| Data | Clean, fixed datasets | Messy, multi-source, changing |
+| Requirements | Stable, long deadlines | Shifting, cross-team alignment |
+| Stakes | Grades | Production impact, business outcomes |
+| Depth expected | Read → transform → load → dashboard | Failure handling, data quality, security, ops |
 
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
+**Foundation courses that matter:** databases, programming, data structures & algorithms, distributed systems, APIs—interview staples across IT roles.
 
-#### Technical Architecture
+**“One framework for every platform”:** Learn the **DNA** of your domain (ingestion, processing, storage, governance, analytics), then map tools (including AWS services)—skills transfer across companies.
 
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
+**Career lessons by environment:**
+- **Startup (Siêu Việt):** end-to-end ownership.
+- **Enterprise (Heineken):** translate “active user” differently for Dev, Product, Marketing.
+- **Fintech (ZaloPay):** design for scale, uptime, and growth from day one.
+- **Consulting (Renova):** customer-facing architecture, problem-first thinking.
 
-#### Modernization Strategy
+**Using AI well:** Tools like **Kiro** to review projects against production-style checklists; validate AI output with official docs (MCP to AWS documentation) and architecture frameworks. Every technical role must communicate across departments.
 
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
+---
 
-### Applying to Work
+### Như Trần — Soft skills, fear & opportunity (AWS)
 
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
+**Theme:** Become your own kind of “Steve Jobs”—unique strengths, not copying others.
 
-### Event Experience
+**Fears from school carry into work:** Fear of being wrong is often fear of consequences—name and reframe the real fear. Public speaking improves with deliberate practice; lived experience is worth sharing with proper framing.
 
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
+**Communication at work:**
+- Miscommunication is usually two-sided; align on intent (manager asking “why KPI missed?” wants a recovery plan).
+- **Small talk & visibility:** Greet managers; short check-ins build recognition.
 
-#### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
+**Opportunity mindset:**
+- Public job posts = crowded “red ocean”; referrals reveal “blue ocean” roles.
+- Personal story: **11 failed Amazon interviews** before success via a mentor introducing her directly to the hiring manager.
+- Plant seeds early (speaking, networking, excellent work)—opportunities grow later.
 
-#### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
+---
 
-#### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
+### Khang Nguyễn — Skills, AI & mindset (Cloud Kinetics / Swinburne alum)
 
-#### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
+Swinburne **K3 graduate (IT major, 4-person cohort)**; **Solution Architect at Cloud Kinetics** (~3 years), involved in hiring.
 
-#### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
+**Curriculum is sound** but **industry moves faster**—university is foundation; outcomes depend on what you build outside class. Internships often report on work already done in industry, not only classroom exercises.
 
-#### Some event photos
-*Add your event photos here*  
+**Small cohort advantage:** Direct access to leadership (e.g. head of school)—harder in large cohorts but more staff available per student.
 
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
+**AI in hiring exercise:** Given 3 days to build a chatbot, **~90% of submissions used AI but did not understand the code**—a major red flag.
+
+**Key quote:** *“You can outsource your thinking, but you cannot outsource your understanding.”*
+
+Use AI heavily but **understand outputs**, validate correctness, and know when chatbot vs. agent is appropriate. AI amplifies weak foundation → bigger mistakes; strong foundation → much higher output.
+
+Banks still prioritize **backend/software engineering depth** with AI as a strong plus, not a replacement.
+
+---
+
+## Takeaways
+
+- Cloud opportunity in Vietnam is large, but **barriers to entry are higher**—production-minded projects and industry context matter.
+- Data/cloud roles require business communication, not only technical depth.
+- **Community, referrals, and visibility** are part of the job search.
+- **AI is a multiplier**—understand fundamentals first, then use AI to accelerate delivery and learning.
+- Swinburne + FCAJ + AWS study tours connect classroom learning with how practitioners build and hire.
+
+## Personal reflection
+
+This study tour bridged university cloud coursework and enterprise reality. The most actionable sessions were Vĩnh’s comparison of academic vs. production data work, Hưng’s industry-based career targeting, and Khang’s warning about using AI without understanding—directly relevant to my capstone and internship deliverables.

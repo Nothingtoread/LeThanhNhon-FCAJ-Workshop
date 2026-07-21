@@ -1,125 +1,98 @@
 ---
 title: "Event 1"
-date: 2024-01-01
+date: 2026-01-01
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+# Báo cáo tham dự: AWS Enterprise Cloud Architectures & Industry Application (Study tour Swinburne)
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+**Sự kiện:** AWS Enterprise Cloud Architectures and Industry Application — Study tour Swinburne Vietnam  
+**Thời gian:** Năm 2026 (study tour Swinburne–AWS lần thứ ba; phối hợp AWS First Cloud AI Journey)  
+**Địa điểm:** Amazon Web Services Vietnam  
+**Vai trò:** Người tham dự (sinh viên Swinburne Vietnam)
 
-### Mục Đích Của Sự Kiện
+## Tổng quan
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+Study tour dành cho sinh viên Swinburne Vietnam (gồm cohort campus Cần Thơ) lắng nghe trực tiếp từ AWS và doanh nghiệp về xu hướng nghề nghiệp cloud, data engineering trong môi trường production, kỹ năng mềm và sử dụng AI có trách nhiệm — mở rộng môn **COS2019 Cloud Computing Architecture** (AWS Academy).
 
-### Danh Sách Diễn Giả
+## Diễn giả
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+| # | Diễn giả | Chức danh / tổ chức |
+|---|----------|---------------------|
+| 1 | **Nguyễn Trần Minh Duy** | Industry Liaison Officer, **Swinburne Vietnam** |
+| 2 | **Nguyễn Gia Hưng** | Head of Solution Architect, **Amazon Web Services Vietnam**; Founder **FCAJ** |
+| 3 | **Bành Cẩm Vĩnh** | Data Engineer, **Renova Cloud**; AWS Community Builder (Data) |
+| 4 | **Như Trần** | Account Manager, **Amazon Web Services Vietnam** (phân khúc startup) |
+| 5 | **Khang Nguyễn (Ma Hoàng Khang)** | Solution Architect, **Cloud Kinetics**; cựu SV Swinburne Vietnam (K3, TP.HCM) |
 
-### Nội Dung Nổi Bật
+---
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+## Nội dung trình bày
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+### Nguyễn Trần Minh Duy — Mở đầu (Swinburne Vietnam)
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+Chào mừng **năm thứ ba liên tiếp** (2024, 2025, 2026) Swinburne Vietnam đưa sinh viên đến AWS, năm 2026 có thêm sinh viên **campus Cần Thơ**. Swinburne tích hợp **AWS Academy** qua COS2019, tạo nền tảng trước khi nghe use case thực tế. Hợp tác **FCAJ** giúp sinh viên sau tốt nghiệp vẫn kết nối, đóng góp lại và hỗ trợ các bạn khóa sau.
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+### Nguyễn Gia Hưng — Thị trường cloud, nghề nghiệp & kỳ vọng FCAJ
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+**Thực tế tuyển dụng:** Vị trí intern cũng yêu cầu nền tảng vững (K8s, container…). Referral và cộng đồng quan trọng không kém job board — nhiều vị trí được fill qua kết nối trước khi đăng LinkedIn.
 
-#### Domain-Driven Design (DDD)
+**Tăng trưởng cloud tại VN:** Doanh thu AWS tại VN tăng ~20 lần trong 6 năm; doanh nghiệp thiết kế cloud-first; hub nhân lực (TP.HCM, Hà Nội, Đà Nẵng) mở rộng, kể cả ngân hàng toàn cầu xây trung tâm IT lớn. AWS đầu tư nhân lực địa phương, hạ tầng (Local Zones, CDN, Region tương lai) và kỹ năng.
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+**Chiến lược nghề nghiệp:** Nghĩ theo **vai trò + ngành** (ví dụ data engineer cho ngân hàng vs. bán lẻ), nhắm một trong sáu ngành khách hàng AWS lớn tại VN.
 
-#### Event-Driven Architecture
+**FCAJ:** Side project giải quyết bài toán ngành thật; tư duy teamwork, ownership, resilience, **invest in yourself** — học liên tục thể hiện trên profile, không chỉ chứng chỉ.
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
+**AI & cầu:** Phần mềm/AI rẻ hơn → cầu tăng (ví dụ đèn LED). Vai trò mới: forward-deployed engineer, team production hóa sản phẩm AI. Xây visibility sớm — cơ hội cộng dồn theo thời gian.
 
-#### Compute Evolution
+### Bành Cẩm Vĩnh — Data engineering: trường học vs. doanh nghiệp (Renova Cloud)
 
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
+**5 năm** data engineer qua **Siêu Việt Group → Heineken Vietnam → VNG ZaloPay → Renova Cloud → VPBank (ML track)**.
 
-#### Amazon Q Developer
+**Khoảng cách trường–công ty:** Trường có dữ liệu sạch, yêu cầu ổn định, deadline dài, trách nhiệm thấp. Công ty có dữ liệu bẩn đa nguồn, yêu cầu thay đổi, phối hợp nhiều team, ảnh hưởng production và kết quả kinh doanh. Portfolio chỉ read-transform-load-dashboard chưa đủ — nhà tuyển dụng hỏi xử lý lỗi, chất lượng dữ liệu, bảo mật, vận hành.
 
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+**Môn nền tảng:** database, lập trình, CTDL & thuật toán, hệ thống phân tán, API.
 
-### Những Gì Học Được
+**“Một framework cho mọi nền tảng”:** Học DNA domain (ingestion, processing, storage, governance, analytics), map công cụ — kỹ năng chuyển được giữa công ty.
 
-#### Tư Duy Thiết Kế
+**Bài học theo môi trường:** Startup — ownership end-to-end; Enterprise (Heineken) — dịch ngôn ngữ kinh doanh giữa phòng ban; Fintech (ZaloPay) — scale từ đầu; Consulting (Renova) — kiến trúc hướng khách hàng.
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+**Dùng AI:** Công cụ như **Kiro** review theo checklist production; validate bằng tài liệu chính thức (MCP tới AWS docs). Mọi vai trò kỹ thuật phải giao tiếp với phòng ban khác.
 
-#### Kiến Trúc Kỹ Thuật
+### Như Trần — Kỹ năng mềm, nỗi sợ & cơ hội (AWS)
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
+**Chủ đề:** Làm Steve Jobs của chính mình — phát huy thế mạnh riêng.
 
-#### Chiến Lược Hiện Đại Hóa
+**Nỗi sợ & thuyết trình:** Đặt tên nỗi sợ thật (thường là hậu quả, không phải “sai”). Luyện thuyết trình có chủ đích.
 
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
+**Giao tiếp:** Hiểu lầm hai chiều; align ý định (sếp hỏi KPI lỡ muốn kế hoạch khắc phục). Small talk và visibility giúp được nhận diện.
 
-### Ứng Dụng Vào Công Việc
+**Cơ hội:** Job công khai = red ocean; referral = blue ocean. Câu chuyện: **11 lần phỏng vấn Amazon thất bại** trước khi thành công nhờ mentor giới thiệu thẳng hiring manager. Gieo hạt sớm — cơ hội nảy mầm sau này.
 
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
+### Khang Nguyễn — Kỹ năng, AI & tư duy (Cloud Kinetics / cựu SV Swinburne)
 
-### Trải nghiệm trong event
+Tốt nghiệp Swinburne **K3 (CNTT, khóa 4 người)**; **Solution Architect tại Cloud Kinetics** (~3 năm), tham gia tuyển dụng.
 
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
+Chương trình ổn nhưng ngành thay đổi nhanh hơn — đại học là nền; kết quả phụ thuộc việc build ngoài lớp. Thực tập thường báo cáo công việc đã làm trong ngành. Khóa nhỏ — tiếp cận trực tiếp lãnh đạo.
 
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
+**AI trong bài tuyển dụng:** Cho 3 ngày làm chatbot, **~90% bài nộp dùng AI nhưng không hiểu code** — cờ đỏ lớn.
 
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
+*“Bạn có thể thuê người khác suy nghĩ, nhưng không thể thuê người khác hiểu thay bạn.”*
 
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
+Dùng AI nhiều nhưng phải hiểu output, validate đúng/sai. AI khuếch đại: nền yếu → lỗi lớn hơn; nền vững → năng suất cao hơn. Ngân hàng vẫn ưu tiên **độ sâu backend/software engineering**, AI là điểm cộng mạnh.
 
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
+---
 
-#### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
+## Bài học rút ra
 
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+- Cơ hội cloud tại VN lớn nhưng rào cản vào ngành cao — dự án hướng production và ngữ cảnh ngành quan trọng.
+- Vai trò data/cloud cần giao tiếp kinh doanh.
+- Cộng đồng, referral và visibility là một phần tìm việc.
+- AI là bộ khuếch đại — hiểu nền tảng trước, rồi dùng AI tăng tốc.
+- Swinburne + FCAJ + study tour kết nối học trên lớp với cách practitioner build và tuyển dụng.
+
+## Cảm nhận cá nhân
+
+Study tour lấp khoảng cách giữa môn cloud trên lớp và thực tế doanh nghiệp. Các phiên hữu ích nhất: so sánh trung thực của anh Vĩnh về data học thuật vs. production, định hướng nghề nghiệp theo ngành của anh Hưng, và cảnh báo của anh Khang về dùng AI mà không hiểu — trực tiếp liên quan capstone và deliverable thực tập.
