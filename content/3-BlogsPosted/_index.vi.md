@@ -1,22 +1,21 @@
 ---
-title: "Các bài blogs đã đăng"
-date: 2024-01-01
+title: "Bài blog đã đăng"
+date: 2026-05-01
 weight: 3
 chapter: false
 pre: " <b> 3. </b> "
 ---
 
-{{% notice warning %}}  
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+Trong thời gian thực tập, tôi đã chia sẻ các bài phân tích kỹ thuật và kiến trúc với cộng đồng. Dưới đây là các bài blog tôi đã đăng trên [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj):
 
-Tại đây sẽ là phần liệt kê, giới thiệu các blogs mà các bạn đã đăng trên [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj). Ví dụ:
+### [Blog 1 - ALS GEOANALYTICS LITHOLENS VÀ MACHINE LEARNING VỚI AMAZON EKS](3.1-Blog1/)
 
-###  [Blog 1 - SESSION POLICIES TRONG AMAZON EKS POD IDENTITY](3.1-Blog1/)
-Blog này giới thiệu Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+Bài viết về cách ALS Geoanalytics dùng Amazon EKS để điều phối workload ML inference cho hệ thống core logging địa chất.
 
-###  [Blog 2 - ...](3.2-Blog2/)
-Blog này giới thiệu Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+### [Blog 2 - TRIỂN KHAI ORACLE DATABASE@AWS BẰNG TERRAFORM](3.2-Blog2/)
 
-###  [Blog 3 - ...](3.3-Blog3/)
-Blog này giới thiệu Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+Bài viết về dịch vụ Oracle Database@AWS co-location và tự động hóa provisioning đa cloud bằng Terraform.
+
+### [Blog 3 - XÂY DỰNG INNOVATION SANDBOX TRÊN AWS VỚI DASHBOARD PHÂN TÍCH REAL-TIME](3.3-Blog3/)
+
+Bài viết về framework Innovation Sandbox với AWS Control Tower, Organizations và dashboard Amazon Q Business.

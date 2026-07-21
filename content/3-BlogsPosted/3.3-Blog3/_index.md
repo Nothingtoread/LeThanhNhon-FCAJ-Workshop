@@ -1,31 +1,45 @@
 ---
 title: "Blog 3"
-date: 2024-01-01
-weight: 1
+date: 2026-05-01
+weight: 3
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+# BUILDING AN INNOVATION SANDBOX ON AWS WITH REAL-TIME ANALYTICS DASHBOARD
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+This article outlines how to create a secure, scalable **Innovation Sandbox** environment on AWS, combined with a self-service real-time analytics dashboard powered by **Amazon Q Business**. This solution enables organizations to host hackathons, training bootcamps, and R&D sandbox environments efficiently while maintaining centralized governance.
 
-Key points to know:
+### Core Architectural Features:
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+1. **Self-Service Dashboard & Amazon Q Business:**
+   - Executives and participants can access a modern web dashboard hosted via **Amazon CloudFront** and **Amazon S3** static assets.
+   - Users can request a custom generative AI web experience. This query is routed through **Amazon API Gateway** and **AWS Lambda** to invoke **Amazon Q Business**, returning a secure, anonymous web experience URL.
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+2. **Account Provisioning & Organizations:**
+   - Managed inside an **AWS Management Account** using **AWS Control Tower** and **AWS Organizations**.
+   - Accounts are automatically provisioned under the `InnovationSandbox` Organizational Unit (OU) using CloudFormation templates.
+   - Sandbox account allocation data is kept in S3.
 
-...Image...
+3. **Automated Deployment and Data Sync:**
+   - Deployed via **AWS CDK** and local Git pipelines.
+   - Python scripts handle S3 data syncing, Amazon Q index synchronization, and CloudFront cache invalidation.
 
-...Link...
+### Architectural Benefits:
 
-...Guide...
+- **Centralized Governance:** AWS Control Tower ensures guardrails are automatically applied to every new sandbox account.
+- **Generative AI Assistant:** Amazon Q Business acts as a smart companion, answering participants' technical queries in real-time.
+- **Infrastructure Automation:** AWS CDK and CloudFormation automate account provisioning and dashboard deployments, removing administrative bottlenecks.
+
+---
+
+### Architecture Diagram:
+
+![Innovation Sandbox Architecture](/images/3-BlogsPosted/blog3.png)
+
+---
+
+### Links and References:
+
+- **Facebook Post:** [AWS Study Group Facebook Post](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2192030984895195/)
+- **Reference Article:** [Innovation Sandbox on AWS with Real-Time Analytics Dashboard](https://aws.amazon.com/vi/blogs/mt/innovation-sandbox-on-aws-with-real-time-analytics-dashboard/)

@@ -1,22 +1,21 @@
 ---
 title: "Blogs Posted"
-date: 2024-01-01
+date: 2026-05-01
 weight: 3
 chapter: false
 pre: " <b> 3. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
+During my internship, I actively shared technical insights and architectural case studies with the community. Below is the list of technical blogs I authored and posted on the [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj) community page:
 
-This section will list and introduce the blogs you have posted to [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj). For example:
+### [Blog 1 - HOW ALS GEOANALYTICS' LITHOLENS REVOLUTIONIZES CORE LOGGING THROUGH MACHINE LEARNING WITH AMAZON EKS](3.1-Blog1/)
 
-###  [Blog 1 - SESSION POLICIES IN AMAZON EKS POD IDENTITY](3.1-Blog1/)
-This blog introduces the newly added session policies feature in Amazon EKS Pod Identity, which allows you to narrow IAM permissions flexibly and precisely for each pod without needing to create multiple separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+This blog explores how ALS Geoanalytics utilized Amazon EKS to orchestrate containerized Machine Learning inference workloads for their geological core logging system, optimizing performance, cost-efficiency, and scalability.
 
-###  [Blog 2 - ...](3.2-Blog2/)
-This blog introduces the newly added session policies feature in Amazon EKS Pod Identity, which allows you to narrow IAM permissions flexibly and precisely for each pod without needing to create multiple separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+### [Blog 2 - PROVISIONING ORACLE DATABASE@AWS RESOURCES USING TERRAFORM](3.2-Blog2/)
 
-###  [Blog 3 - ...](3.3-Blog3/)
-This blog introduces the newly added session policies feature in Amazon EKS Pod Identity, which allows you to narrow IAM permissions flexibly and precisely for each pod without needing to create multiple separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+This blog discusses the Oracle Database@AWS co-location offering that links OCI Exadata DB infrastructure inside AWS datacenters with sub-millisecond latencies, and how to automate the provisioning of this multi-cloud architecture using Terraform.
+
+### [Blog 3 - BUILDING AN INNOVATION SANDBOX ON AWS WITH REAL-TIME ANALYTICS DASHBOARD](3.3-Blog3/)
+
+This blog presents a secure, scalable AWS Innovation Sandbox framework utilizing AWS Control Tower and AWS Organizations for account provisioning, combined with a self-service real-time dashboard powered by Amazon Q Business.

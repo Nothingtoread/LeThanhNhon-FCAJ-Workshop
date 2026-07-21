@@ -1,31 +1,30 @@
 ---
 title: "Blog 1"
-date: 2024-01-01
+date: 2026-05-01
 weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
+# ALS GEOANALYTICS' LITHOLENS VÀ MACHINE LEARNING VỚI AMAZON EKS
 
-Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+ALS Geoanalytics phát triển **LithoLens** — nền tảng cloud-native dùng computer vision và ML để tự động hóa quy trình core logging địa chất, tăng tốc đánh giá tài nguyên khoáng sản.
 
-Các điểm chính cần nắm:
+### Thành phần kiến trúc chính:
 
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
-* Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
-* Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
-* Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
-* Cấu hình dễ dàng qua AWS Management Console, AWS CLI hoặc AWS SDK khi tạo association giữa Kubernetes ServiceAccount và IAM role.
+- **Client & API Layer:** API Gateway, Lambda, Cognito.
+- **Compute Layer:** Amazon EKS điều phối container ML inference, scale theo lượng ảnh xử lý.
+- **Storage & Database:** S3 lưu ảnh core, RDS metadata, CloudWatch giám sát.
 
-Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
+### Lợi ích:
 
-...Hình ảnh...
+- **Khả năng mở rộng** với auto-scaling trên EKS.
+- **Tiết kiệm chi phí** nhờ serverless API + container scale theo nhu cầu.
+- **Hiệu năng cao** với GPU instance cho deep learning inference.
 
-...Link...
+![LithoLens Architecture](/images/3-BlogsPosted/blog1.png)
 
-...Hướng dẫn...
+### Liên kết tham khảo:
+
+- [Bài đăng Facebook](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2199204024177891/)
+- [Bài viết AWS](https://aws.amazon.com/vi/blogs/architecture/how-als-geoanalytics-litholens-revolutionizes-core-logging-through-machine-learning-with-amazon-eks/)

@@ -1,59 +1,34 @@
 ---
 title: "Worklog Tuần 10"
-date: 2024-01-01
-weight: 2
+date: 2026-07-07
+weight: 10
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 10:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hoàn thành dự án capstone (xử lý bất đồng bộ, củng cố VPC).
+* Bắt đầu viết báo cáo thực tập và handoff tài liệu workshop.
+
+**Thời gian:** 07/07/2026 – 14/07/2026
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | ------------ | --------------- | -------------- |
+| 2 | - Triển khai xử lý sau trận bất đồng bộ: DynamoDB Streams → MatchAnalytics Lambda | 07/07/2026 | 07/07/2026 | |
+| 3 | - Cài CodeDeploy agent trên EC2 fleet (Ubuntu 24.04 / patch Ruby 3.3) | 08/07/2026 | 08/07/2026 | |
+| 4 | - Chuyển MatchMaker Lambda sang private subnet với VPC endpoints (không NAT) | 09/07/2026 | 09/07/2026 | |
+| 5 | - Kiểm thử tích hợp cuối: matchmaking → gameplay → kết thúc trận → analytics | 10/07/2026 | 10/07/2026 | |
+| 6 | - Hoàn thành deliverable capstone; lập dàn ý báo cáo thực tập <br> - Handoff tài liệu lab workshop cho team | 11/07/2026 | 11/07/2026 | |
 
 ### Kết quả đạt được tuần 10:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Triển khai pipeline **Flow E**: DynamoDB Stream `ActiveMatches` → Lambda `FightingGameMatchAnalytics` → bảng `MatchAnalytics`.
+* Cài và cấu hình CodeDeploy agent trên game server; tạo deployment group `FightingGameServer-fleet`.
+* Publish phiên bản Lambda và alias `live` cho canary rollout qua CodeDeploy.
+* Cấu hình lại MatchMaker trong private subnet với DynamoDB gateway và EC2/CloudWatch interface endpoints.
+* Xác minh vòng đời game đầy đủ: login → hàng đợi → trận → WebSocket gameplay → ghi nhận trận kết thúc trong DynamoDB.
+* Viết hướng dẫn `PROJECT.md` end-to-end và bắt đầu cấu trúc báo cáo Hugo.
+* Chuẩn bị tài liệu handoff workshop lab VPC endpoints.

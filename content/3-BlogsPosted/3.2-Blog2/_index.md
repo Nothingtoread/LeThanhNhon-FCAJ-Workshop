@@ -1,31 +1,46 @@
 ---
 title: "Blog 2"
-date: 2024-01-01
-weight: 1
+date: 2026-05-01
+weight: 2
 chapter: false
 pre: " <b> 3.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+# PROVISIONING ORACLE DATABASE@AWS RESOURCES USING TERRAFORM
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+This blog explores **Oracle Database@AWS**, a co-location service that brings Oracle Cloud Infrastructure (OCI) database services directly into AWS data centers. This solution allows companies to run enterprise-grade Oracle Exadata database workloads inside AWS with sub-millisecond latency connection to AWS services like Amazon EC2.
 
-Key points to know:
+### Key Architectural Concepts:
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+- **Customer VPC & Application Layer:**  
+  The client applications run on **Amazon EC2** instances inside a standard AWS Customer VPC.
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+- **Oracle Database (ODB) Network:**  
+  An ODB Network VPC is established inside the AWS Region, housing client and backup subnets. It connects to the Customer VPC via **ODB Peering**.
 
-...Image...
+- **OCI Child Site (Co-located inside AWS Datacenter):**  
+  The OCI Child site contains the actual physical **Exadata Infrastructure** running OCI Virtual Cloud Network (VCN) client and backup subnets mapped directly to AWS subnets.
 
-...Link...
+- **Control Plane & Automation:**  
+  Resource orchestration and lifecycle management are automated via **OCI Automation** connected to the **OCI Control Plane** in the OCI Parent Region.
 
-...Guide...
+### Infrastructure as Code (IaC) with Terraform:
+
+By using the **Terraform** OCI and AWS providers, cloud engineers can provision this entire cross-cloud infrastructure in a unified workflow:
+
+1. Create VPCs, Subnets, and Route Tables in AWS.
+2. Initialize OCI provider to provision the Exadata Infrastructure.
+3. Configure the private connectivity and network peering between AWS and OCI child sites automatically.
+
+---
+
+### Architecture Diagram:
+
+![Oracle Database@AWS Architecture](/images/3-BlogsPosted/blog2.png)
+
+---
+
+### Links and References:
+
+- **Facebook Post:** [AWS Study Group Facebook Post](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2198792150885745/)
+- **Reference Article:** [Provision Oracle Database and AWS resources using Terraform](https://aws.amazon.com/vi/blogs/database/provision-oracle-databaseaws-resources-using-terraform/)
