@@ -31,3 +31,9 @@ Tài liệu teardown — chụp dialog xác nhận xóa rồi **Cancel**.
 ![Xóa S3 bucket](/images/5-Workshop/image48.png)
 
 ![Xóa VPC](/images/5-Workshop/image49.png)
+
+### 10. IAM roles
+
+Xóa deploy roles, Lambda roles và EC2 instance profile role sau khi đã gỡ tài nguyên phụ thuộc.
+
+![Xóa IAM roles](/images/5-Workshop/delete-iam-roles.png)

@@ -65,6 +65,4 @@ Delete dependencies before foundations:
 
 Delete deploy roles, Lambda roles, and EC2 instance profile role after all dependent resources are removed.
 
-## Report usage
-
-Include screenshots in the internship appendix to demonstrate awareness of full stack lifecycle and cost hygiene. For the live demo account, resources may remain running until the internship ends—this section proves documented cleanup capability only.
+![Delete IAM roles](/images/5-Workshop/delete-iam-roles.png)

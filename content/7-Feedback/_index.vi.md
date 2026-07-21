@@ -5,40 +5,51 @@ weight: 7
 chapter: false
 pre: " <b> 7. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
->Tại đây bạn có thể tự do đóng góp ý kiến cá nhân về những trải nghiệm khi tham gia chương trình First Cloud AI Journey, giúp team FCAJ cải thiện những vấn đề còn thiếu sót dựa trên các hạng mục sau:
+Dưới đây là ý kiến cá nhân của em về trải nghiệm tham gia chương trình **First Cloud AI Journey (FCAJ)** tại **Công ty TNHH Amazon Web Services Việt Nam**, nhằm giúp team FCAJ cải thiện các kỳ thực tập sau.
 
 ### Đánh giá chung
 
-**1. Môi trường làm việc**  
-Môi trường làm việc rất thân thiện và cởi mở. Các thành viên trong FCAJ luôn sẵn sàng hỗ trợ khi mình gặp khó khăn, kể cả ngoài giờ làm việc. Không gian làm việc gọn gàng, thoải mái, giúp mình tập trung tốt hơn. Tuy nhiên, mình nghĩ có thể bổ sung thêm một số buổi giao lưu hoặc team bonding để mọi người hiểu nhau hơn.
+**1. Môi trường làm việc**
 
-**2. Sự hỗ trợ của mentor / team admin**  
-Mentor hướng dẫn rất chi tiết, giải thích rõ ràng khi mình chưa hiểu và luôn khuyến khích mình đặt câu hỏi. Team admin hỗ trợ các thủ tục, tài liệu và tạo điều kiện để mình làm việc thuận lợi. Mình đánh giá cao việc mentor cho phép mình thử và tự xử lý vấn đề thay vì chỉ đưa đáp án.
+Chương trình FCAJ tạo môi trường học tập cởi mở và hợp tác. Mentor và các thành viên trong cohort sẵn sàng hỗ trợ khi gặp khó khăn kỹ thuật hoặc thủ tục. Các sự kiện cộng đồng và buổi học tạo không gian thoải mái để tiếp cận dịch vụ AWS. Có thể bổ sung thêm hoạt động giao lưu giữa các cohort để tăng kết nối.
 
-**3. Sự phù hợp giữa công việc và chuyên ngành học**  
-Công việc mình được giao phù hợp với kiến thức mình đã học ở trường, đồng thời mở rộng thêm những mảng mới mà mình chưa từng được tiếp cận. Nhờ vậy, mình vừa củng cố kiến thức nền tảng, vừa học thêm kỹ năng thực tế.
+**2. Sự hỗ trợ của mentor / team admin**
 
-**4. Cơ hội học hỏi & phát triển kỹ năng**  
-Trong quá trình thực tập, mình học được nhiều kỹ năng mới như sử dụng công cụ quản lý dự án, kỹ năng làm việc nhóm, và cả cách giao tiếp chuyên nghiệp trong môi trường công ty. Mentor cũng chia sẻ nhiều kinh nghiệm thực tế giúp mình định hướng tốt hơn cho sự nghiệp.
+Mentor hướng dẫn rõ ràng về quyết định kiến trúc, theo dõi tiến độ thường xuyên và khuyến khích em tự thử giải pháp trước khi hỏi đáp án. Team admin hỗ trợ onboarding, tài liệu và logistics để em tập trung vào dự án.
 
-**5. Văn hóa & tinh thần đồng đội**  
-Văn hóa công ty rất tích cực: mọi người tôn trọng lẫn nhau, làm việc nghiêm túc nhưng vẫn vui vẻ. Khi có dự án gấp, mọi người cùng nhau cố gắng, hỗ trợ không phân biệt vị trí. Điều này giúp mình cảm thấy mình là một phần của tập thể, dù chỉ là thực tập sinh.
+**3. Sự phù hợp giữa công việc và chuyên ngành học**
 
-**6. Chính sách / phúc lợi cho thực tập sinh**  
-Công ty có hỗ trợ phụ cấp thực tập và tạo điều kiện về thời gian linh hoạt khi cần thiết. Ngoài ra, việc được tham gia các buổi đào tạo nội bộ là một điểm cộng lớn.
+Dự án capstone fighting-game phù hợp với ngành **Mạng Máy Tính / Công Nghệ Thông Tin**, đồng thời mở rộng sang serverless, quản lý fleet Spot, GitOps và VPC endpoints — những mảng chưa được đào sâu tại trường. Công việc kết nối lý thuyết với thực hành AWS.
 
+**4. Cơ hội học hỏi & phát triển kỹ năng**
 
-### Một số câu hỏi khác
-- Điều bạn **hài lòng nhất** trong thời gian thực tập?  
-- Điều bạn nghĩ công ty **cần cải thiện** cho các thực tập sinh sau?  
-- Nếu giới thiệu cho bạn bè, bạn có **khuyên họ thực tập ở đây không**? Vì sao?  
+Ngoài capstone, em học thêm qua **FCAJ Community Day**, workshop lab, xuất bản báo cáo Hugo và xử lý sự cố CI/CD. Các trải nghiệm này nâng cao cả chiều sâu kỹ thuật lẫn kỹ năng viết báo cáo.
 
+**5. Văn hóa & tinh thần đồng đội**
+
+Văn hóa chương trình nhấn mạnh học hỏi công khai, chia sẻ tại sự kiện cộng đồng và hỗ trợ đồng đội. Dù là thực tập sinh, em vẫn được khuyến khích tham gia thảo luận kỹ thuật và trình bày công việc.
+
+**6. Chính sách / phúc lợi cho thực tập sinh**
+
+Lộ trình 12 tuần rõ ràng, deliverable cụ thể (worklog, proposal, workshop, báo cáo) và tài nguyên học AWS tạo khung thực tập ổn định. Các buổi nội bộ và sự kiện cộng đồng bổ trợ tốt cho tự học dự án.
+
+---
+
+### Một số suy ngẫm thêm
+
+**Điều em hài lòng nhất:** Xây dựng hạ tầng end-to-end cho fighting-game — từ EC2 warm pool, S3 hosting đến OIDC, CodeDeploy, async analytics và VPC MatchMaker private — và thấy pipeline GitHub Actions chạy thành công.
+
+**Điều cần cải thiện cho thực tập sinh sau:** Thống nhất vai trò trong team capstone sớm hơn và có checklist tích hợp chung sẽ giảm ma sát ở giai đoạn cuối.
+
+**Có khuyên bạn bè tham gia không?** Có. FCAJ mang lại mentorship có cấu trúc, dự án AWS thực tế và kết nối cộng đồng cloud — phù hợp sinh viên muốn thực hành cloud engineering ngoài lab trên lớp.
+
+---
 
 ### Đề xuất & mong muốn
-- Bạn có đề xuất gì để cải thiện trải nghiệm trong kỳ thực tập?  
-- Bạn có muốn tiếp tục chương trình này trong tương lai?
-- Góp ý khác (tự do chia sẻ):
+
+Em đề xuất duy trì cân bằng giữa tự học lab và check-in cohort, đồng thời tiếp tục Community Day kết nối thực tập sinh với chuyên gia ngành.
+
+Em mong muốn tiếp tục kết nối với cộng đồng FCAJ / AWS study sau chương trình.
+
+**Góp ý khác:** Cảm ơn mentor và ban tổ chức. Sự kết hợp giữa dự án, sự kiện và viết báo cáo giúp em phát triển cả về kỹ thuật lẫn phong cách làm việc chuyên nghiệp.

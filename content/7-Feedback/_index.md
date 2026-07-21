@@ -6,42 +6,50 @@ chapter: false
 pre: " <b> 7. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+Below is my personal feedback on participating in the **First Cloud AI Journey (FCAJ)** program at **Amazon Web Services Vietnam**, to help the FCAJ team improve future cohort experiences.
 
-> Here, you can freely share your personal opinions about your experience participating in the First Cloud AI Journey program. This will help the FCAJ team improve any shortcomings based on the following aspects:
+### Overall evaluation
 
-### Overall Evaluation
+**1. Working environment**
 
-**1. Working Environment**  
-The working environment is very friendly and open. FCAJ members are always willing to help whenever I encounter difficulties, even outside working hours. The workspace is tidy and comfortable, helping me focus better. However, I think it would be nice to have more social gatherings or team bonding activities to strengthen relationships.
+The FCAJ program provides an open, collaborative environment. Mentors and cohort members are approachable when technical or administrative questions arise. Community events and study sessions create a comfortable space to learn AWS services. More informal team-bonding activities between cohorts could further strengthen peer connections.
 
-**2. Support from Mentor / Team Admin**  
-The mentor provides very detailed guidance, explains clearly when I don’t understand, and always encourages me to ask questions. The admin team supports administrative tasks, provides necessary documents, and creates favorable conditions for me to work effectively. I especially appreciate that the mentor allows me to try and solve problems myself instead of just giving the answer.
+**2. Support from mentor / team admin**
 
-**3. Relevance of Work to Academic Major**  
-The tasks I was assigned align well with the knowledge I learned at university, while also introducing me to new areas I had never encountered before. This allowed me to both strengthen my foundational knowledge and gain practical skills.
+My mentor provided clear guidance on architecture decisions, reviewed progress regularly, and encouraged me to attempt solutions independently before asking for answers. The admin team supported onboarding, documentation, and program logistics so I could focus on project delivery.
 
-**4. Learning & Skill Development Opportunities**  
-During the internship, I learned many new skills such as using project management tools, teamwork skills, and professional communication in a corporate environment. The mentor also shared valuable real-world experiences that helped me better plan my career path.
+**3. Relevance of work to academic major**
 
-**5. Company Culture & Team Spirit**  
-The company culture is very positive: everyone respects each other, works seriously but still keeps things enjoyable. When there are urgent projects, everyone works together and supports one another regardless of their position. This made me feel like a real part of the team, even as an intern.
+The capstone fighting-game backend aligned well with my **Computer Networks / Information Technology** studies while extending into areas not fully covered in coursework — serverless design, Spot fleet management, GitOps, and VPC endpoint networking. The work bridged university theory with production-style AWS practice.
 
-**6. Internship Policies / Benefits**  
-The company provides an internship allowance and offers flexible working hours when needed. In addition, having the opportunity to join internal training sessions is a big plus.
+**4. Learning & skill development opportunities**
 
----
+Beyond the capstone, I gained practical skills through **FCAJ Community Day** events, workshop labs, Hugo report publishing, and hands-on troubleshooting of CI/CD pipelines. These experiences improved both technical depth and professional reporting habits.
 
-### Additional Questions
-- What did you find **most satisfying** during your internship?  
-- What do you think the company **should improve** for future interns?  
-- If recommending to a friend, would you **suggest they intern here**? Why or why not?  
+**5. Company culture & team spirit**
+
+The program culture emphasizes learning in public, sharing knowledge at community events, and supporting peers. Even as an intern, I felt included in technical discussions and encouraged to document and present my work.
+
+**6. Internship policies / benefits**
+
+The structured 12-week timeline, clear deliverables (worklog, proposal, workshop, report), and access to AWS learning resources provided a well-defined internship path. Internal sessions and community events were valuable complements to self-directed project work.
 
 ---
 
-### Suggestions & Expectations
-- Do you have any suggestions to improve the internship experience?  
-- Would you like to continue this program in the future?  
-- Any other comments (free sharing):
+### Additional reflections
+
+**What I found most satisfying:** Building end-to-end infrastructure for the fighting-game project — from EC2 warm pool and S3 hosting through OIDC, CodeDeploy, async analytics, and private MatchMaker VPC — and seeing it deploy successfully via GitHub Actions.
+
+**What could be improved for future interns:** Earlier alignment on capstone team roles and a shared deployment checklist would reduce integration friction in the final weeks.
+
+**Would I recommend this program?** Yes. FCAJ offers structured mentorship, real AWS project experience, and exposure to the local cloud community — suitable for students who want hands-on cloud engineering beyond classroom labs.
+
+---
+
+### Suggestions & expectations
+
+I suggest maintaining the balance between self-paced lab work and cohort check-ins, and continuing Community Day events that connect interns with industry practitioners.
+
+I would be interested in staying connected with the FCAJ / AWS study community after the program.
+
+**Other comments:** Thank you to the mentors and organizers for a meaningful internship experience. The combination of project work, events, and report documentation helped me grow both technically and professionally.
