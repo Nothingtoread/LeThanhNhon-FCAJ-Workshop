@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 1. </b> "
 ---
 
-**On this page**, you will find my internship worklog for the **First Cloud AI Journey (FCAJ)** program at **Amazon Web Services Vietnam**. The internship ran for **12 weeks** from **05/05/2026** to **29/07/2026**, covering AWS fundamentals, a capstone fighting-game project, workshop labs, and final report delivery.
+**On this page**, you will find my internship worklog for the **First Cloud AI Journey (FCAJ)** program at **Amazon Web Services Vietnam**. The internship ran for **12 weeks** from **05/05/2026** to **30/07/2026**, covering AWS fundamentals, a capstone fighting-game project, workshop labs, and final report delivery.
 
 **Student:** Lê Thành Nhơn (MSSV: 2280602244)  
 **Mentor:** Nguyễn Gia Hưng – hunggia@amazon.com.vn  
