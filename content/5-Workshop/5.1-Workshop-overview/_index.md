@@ -43,7 +43,7 @@ Teammate-owned items (initial Cognito, API Gateway wiring, first MatchMaker Lamb
 
 ## Workshop order
 
-Complete sections **5.2 → 5.8** in sequence—later steps depend on earlier IAM, fleet, and networking. Section **5.9** is a screenshot-based teardown guide for the internship report (cancel before confirming deletes).
+Complete sections **5.2 → 5.8** in sequence—later steps depend on earlier IAM, fleet, and networking. Section **5.9** demonstrates the live game client. Section **5.10** is a screenshot-based teardown guide for the internship report (cancel before confirming deletes).
 
 ## Verification checklist
 

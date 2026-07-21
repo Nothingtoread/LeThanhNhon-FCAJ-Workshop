@@ -13,7 +13,7 @@ pre: " <b> 5. </b> "
 Các bước thực hành cho backend game multiplayer **serverless + EC2 Spot** đã mô tả trong proposal thực tập. Phần này ghi lại hạ tầng và CI/CD em phụ trách trên dự án [fighting-game](https://github.com/Nothingtoread/fighting-game).
 
 **Region:** `ap-southeast-1`  
-**Phạm vi:** EC2 warm pool fleet, S3 static client hosting, IAM, GitHub OIDC, CodeDeploy (Lambda + EC2), async match analytics, VPC private MatchMaker và quy trình teardown có tài liệu.
+**Phạm vi:** EC2 warm pool fleet, S3 static client hosting, IAM, GitHub OIDC, CodeDeploy (Lambda + EC2), async match analytics, VPC private MatchMaker, demo game trực tiếp và quy trình teardown có tài liệu.
 
 #### Nội dung
 
@@ -25,4 +25,5 @@ Các bước thực hành cho backend game multiplayer **serverless + EC2 Spot**
 6. [CodeDeploy — Lambda & EC2 CI/CD](5.6-CodeDeploy/)
 7. [Async post-match processing](5.7-Async-Processing/)
 8. [VPC — private MatchMaker (không NAT)](5.8-VPC-MatchMaker/)
-9. [Dọn dẹp tài nguyên (có tài liệu)](5.9-Cleanup/)
+9. [Game demo](5.9-Game-Demo/)
+10. [Dọn dẹp tài nguyên (có tài liệu)](5.10-Cleanup/)

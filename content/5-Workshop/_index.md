@@ -13,7 +13,7 @@ pre: " <b> 5. </b> "
 Hands-on steps for the **serverless + EC2 Spot** multiplayer game backend documented in my internship proposal. This section covers the infrastructure and CI/CD work I was responsible for on the [fighting-game](https://github.com/Nothingtoread/fighting-game) project.
 
 **Region:** `ap-southeast-1`  
-**Scope:** EC2 warm pool fleet, S3 static client hosting, IAM, GitHub OIDC, CodeDeploy (Lambda + EC2), async match analytics, private MatchMaker VPC, and documented teardown.
+**Scope:** EC2 warm pool fleet, S3 static client hosting, IAM, GitHub OIDC, CodeDeploy (Lambda + EC2), async match analytics, private MatchMaker VPC, live game demo, and documented teardown.
 
 #### Contents
 
@@ -25,4 +25,5 @@ Hands-on steps for the **serverless + EC2 Spot** multiplayer game backend docume
 6. [CodeDeploy — Lambda & EC2 CI/CD](5.6-CodeDeploy/)
 7. [Async post-match processing](5.7-Async-Processing/)
 8. [VPC — private MatchMaker (no NAT)](5.8-VPC-MatchMaker/)
-9. [Resource cleanup (documented)](5.9-Cleanup/)
+9. [Game demo](5.9-Game-Demo/)
+10. [Resource cleanup (documented)](5.10-Cleanup/)

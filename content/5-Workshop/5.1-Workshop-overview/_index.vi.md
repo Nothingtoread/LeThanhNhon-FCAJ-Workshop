@@ -38,7 +38,7 @@ Phần đồng đội làm (Cognito ban đầu, API Gateway, code MatchMaker gia
 
 ## Thứ tự thực hiện
 
-Làm **5.2 → 5.8** theo thứ tự. Mục **5.9** là hướng dẫn teardown có screenshot (hủy trước khi xác nhận xóa).
+Làm **5.2 → 5.8** theo thứ tự. Mục **5.9** demo game trực tiếp. Mục **5.10** là hướng dẫn teardown có screenshot (hủy trước khi xác nhận xóa).
 
 ## Checklist xác minh
 
