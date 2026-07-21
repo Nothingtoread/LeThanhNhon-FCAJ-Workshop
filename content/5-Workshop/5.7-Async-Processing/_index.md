@@ -10,6 +10,8 @@ pre: " <b> 5.7. </b> "
 
 Implement **Flow E** — when a match ends, copy finished match data from `ActiveMatches` to `MatchAnalytics` asynchronously via **DynamoDB Streams** and a Lambda consumer, without blocking gameplay.
 
+![Async processing overview](/images/5-Workshop/image30.png)
+
 ## Step 1 — Enable DynamoDB Streams on ActiveMatches
 
 1. **DynamoDB → Tables → ActiveMatches → Exports and streams**.
@@ -21,17 +23,29 @@ Implement **Flow E** — when a match ends, copy finished match data from `Activ
 2. Design keys to match analytics queries (e.g. partition by match id or player).
 3. On-demand or provisioned capacity per project choice.
 
+![DynamoDB setup](/images/5-Workshop/image31.png)
+
 ## Step 3 — Create MatchAnalytics Lambda role
 
 1. Role: `FightingGameMatchAnalyticsRole`.
+
+![Created new Match analytic role](/images/5-Workshop/image34.png)
+
 2. Policy: `dynamodb:GetRecords`, `DescribeStream`, `ListStreams` on `ActiveMatches` stream ARN.
+
+![Created active stream reading policy](/images/5-Workshop/image35.png)
+
 3. Policy: `dynamodb:PutItem` (and read if needed) on `MatchAnalytics`.
+
+![Created role for MatchAnalytic Lambda](/images/5-Workshop/image36.png)
 
 ## Step 4 — Deploy FightingGameMatchAnalytics Lambda
 
 1. Upload `backend/lambda-match-analytics.mjs` (or packaged zip from CI).
 2. Runtime: Node.js (match project version).
 3. Attach `FightingGameMatchAnalyticsRole`.
+
+![Created Match Analytic Lambda](/images/5-Workshop/image37.png)
 
 ## Step 5 — Event source mapping
 
@@ -59,8 +73,15 @@ Implement **Flow E** — when a match ends, copy finished match data from `Activ
 
 1. Play a full match until disconnect.
 2. Check `ActiveMatches` rows show `finished`.
+
+![Finished state application to DynamoDB](/images/5-Workshop/image32.png)
+
+![Finished state in DynamoDB (detail)](/images/5-Workshop/image33.png)
+
 3. Confirm corresponding items in `MatchAnalytics`.
 4. CloudWatch Logs for analytics Lambda show successful processing.
+
+![DynamoDB data](/images/5-Workshop/image38.png)
 
 ## Expected outcome
 

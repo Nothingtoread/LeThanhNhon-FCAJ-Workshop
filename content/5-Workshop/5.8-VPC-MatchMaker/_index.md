@@ -8,75 +8,60 @@ pre: " <b> 5.8. </b> "
 
 ## Goal
 
-Move **MatchMaker Lambda** into **private subnets** and reach DynamoDB + EC2 APIs via **VPC endpoints**—eliminating **NAT Gateway** cost for control-plane traffic.
+Move **MatchMaker Lambda** into **private subnets** and reach DynamoDB + EC2 APIs via **VPC endpoints**—no NAT Gateway for control-plane traffic.
 
-## Architecture summary
+## VPC
 
-| Component | Placement |
-|-----------|-----------|
-| Game server ASG | Public subnet (clients connect via IGW on port 9000) |
-| MatchMaker Lambda | Private subnets (no public IP) |
-| DynamoDB | Gateway VPC endpoint |
-| EC2 API, CloudWatch Logs | Interface VPC endpoints |
+Default VPC `vpc-09a82bd7e81714079` (`172.31.0.0/16`) in `ap-southeast-1`.
 
-## Step 1 — Document subnet layout
+![VPC overview](/images/5-Workshop/5.8-VPC-MatchMaker/vpc.png)
 
-Record CIDRs for:
+## Subnets
 
-- Public subnets (game servers)
-- Private subnets (Lambda)
-- Route tables per tier
+Private subnets for MatchMaker Lambda across two AZs, plus existing public subnets for the game server ASG.
 
-## Step 2 — Create private subnets & route table
+![Subnet list](/images/5-Workshop/5.8-VPC-MatchMaker/subnets.png)
 
-1. Create private subnets in two AZs (Lambda HA).
-2. Private route table: **local VPC routes only**—no `0.0.0.0/0` to NAT.
-3. Associate private subnets with this route table.
+### FightingGame-Private-1a
 
-## Step 3 — Security groups
+`172.31.48.0/24` in `ap-southeast-1a` — associated with **`FightingGame-Private-RT`** (local route + DynamoDB gateway endpoint prefix list).
 
-1. **Lambda SG:** outbound to VPC endpoints and (if required) internal services only.
-2. **Endpoint SG:** allow inbound HTTPS (443) from Lambda SG.
-3. Game server SG unchanged for player traffic.
+![FightingGame-Private-1a route table](/images/5-Workshop/5.8-VPC-MatchMaker/subnet-private-1a.png)
 
-## Step 4 — Create VPC endpoints
+### FightingGame-Private-1b
+
+`172.31.49.0/24` in `ap-southeast-1b` — same private route table `FightingGame-Private-RT`.
+
+![FightingGame-Private-1b](/images/5-Workshop/5.8-VPC-MatchMaker/subnet-private-1b.png)
+
+## Security groups
+
+![Security groups overview](/images/5-Workshop/5.8-VPC-MatchMaker/security-groups.png)
+
+### FightingGameMatchmakerSG
+
+MatchMaker Lambda ENIs in private subnets (`sg-0542a9acf546e761e`).
+
+![FightingGameMatchmakerSG](/images/5-Workshop/5.8-VPC-MatchMaker/fighting-game-matchmaker-sg.png)
+
+### FightingGameServerSG
+
+Game server — SSH (admin IP) and TCP **9000** for WebSocket gameplay (`sg-096a41cd239e4254a`).
+
+![FightingGameServerSG](/images/5-Workshop/5.8-VPC-MatchMaker/fighting-game-server-sg.png)
+
+### FightingGameVpceSG
+
+Interface VPC endpoints — inbound **HTTPS 443** from MatchMaker SG (`sg-0579918ab952df884`).
+
+![FightingGameVpceSG](/images/5-Workshop/5.8-VPC-MatchMaker/fighting-game-vpce-sg.png)
+
+## VPC endpoints
 
 | Endpoint | Type | Service |
 |----------|------|---------|
-| DynamoDB | **Gateway** | `com.amazonaws.ap-southeast-1.dynamodb` — attach to private route table |
-| EC2 | **Interface** | `com.amazonaws.ap-southeast-1.ec2` |
-| CloudWatch Logs | **Interface** | `com.amazonaws.ap-southeast-1.logs` |
+| FightingGame-DDB-Gateway | Gateway | `com.amazonaws.ap-southeast-1.dynamodb` |
+| FightingGame-EC2-Interface | Interface | `com.amazonaws.ap-southeast-1.ec2` |
+| FightingGame-Logs-Interface | Interface | `com.amazonaws.ap-southeast-1.logs` |
 
-Enable **private DNS** on interface endpoints so Lambda SDK resolves regional hostnames inside the VPC.
-
-## Step 5 — Update Lambda VPC config
-
-1. **MatchMaker Lambda → Configuration → VPC**.
-2. Select VPC, **private subnets**, Lambda security group.
-3. Attach **`AWSLambdaVPCAccessExecutionRole`** to Lambda execution role if not already present.
-
-## Step 6 — Publish new version & update alias
-
-1. Publish new Lambda version after VPC change (cold start / ENI setup).
-2. Point **`live` alias** to new version.
-3. Run matchmaking smoke test from client.
-
-## Step 7 — Verify (no NAT)
-
-1. Confirm **no NAT Gateway** required for MatchMaker → DynamoDB / `DescribeInstances`.
-2. CloudWatch Logs still receive Lambda output via logs endpoint.
-3. Match assignment and security group updates still succeed.
-
-## Expected outcome
-
-- MatchMaker control traffic stays on AWS private network
-- Zero NAT data-processing charges for Lambda metadata calls
-- Game servers remain publicly reachable for WebSocket gameplay
-
-## Troubleshooting
-
-| Issue | Check |
-|-------|--------|
-| Lambda timeout in VPC | Subnets must route to endpoints; SG rules on endpoints |
-| `DescribeInstances` fails | EC2 interface endpoint + IAM permissions |
-| No logs | Logs interface endpoint + DNS enabled |
+![VPC endpoints](/images/5-Workshop/5.8-VPC-MatchMaker/vpc-endpoints.png)

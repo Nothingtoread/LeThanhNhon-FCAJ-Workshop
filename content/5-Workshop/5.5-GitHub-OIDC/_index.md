@@ -10,6 +10,8 @@ pre: " <b> 5.5. </b> "
 
 Authenticate **GitHub Actions** to AWS using **OIDC**—no long-lived `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY` in repository secrets.
 
+![GitHub OIDC → AWS (no long-lived access keys)](/images/5-Workshop/image9.png)
+
 ## Step 1 — Add GitHub as OIDC identity provider
 
 1. **IAM → Identity providers → Add provider**.
@@ -17,6 +19,8 @@ Authenticate **GitHub Actions** to AWS using **OIDC**—no long-lived `AWS_ACCES
 3. Provider URL: `https://token.actions.githubusercontent.com`
 4. Audience: `sts.amazonaws.com`
 5. Create provider.
+
+![Add GitHub as OIDC provider](/images/5-Workshop/image10.png)
 
 ## Step 2 — Create IAM role for GitHub Actions
 
@@ -36,6 +40,10 @@ Authenticate **GitHub Actions** to AWS using **OIDC**—no long-lived `AWS_ACCES
 4. Role name: `GitHubActionsFightingGameDeploy` (or your chosen name).
 5. Attach permissions policy from [5.4 IAM](5.4-IAM/).
 
+![Attach permissions policy to role](/images/5-Workshop/image11.png)
+
+![Role trust policy](/images/5-Workshop/image12.png)
+
 ## Step 3 — Configure repository secrets
 
 In **GitHub → Settings → Secrets and variables → Actions**, add:
@@ -50,6 +58,10 @@ In **GitHub → Settings → Secrets and variables → Actions**, add:
 | `WS_SERVER` | WebSocket server hint for client |
 
 Do **not** store static AWS access keys.
+
+![Repository secrets](/images/5-Workshop/image13.png)
+
+![Repository secrets (continued)](/images/5-Workshop/image14.png)
 
 ## Step 4 — Update GitHub Actions workflow
 
@@ -69,8 +81,12 @@ permissions:
 ## Step 5 — Verify OIDC login
 
 1. Push a commit to trigger the workflow.
-2. Confirm **Configure AWS credentials** step succeeds.
-3. Confirm S3 sync and Lambda/CodeDeploy steps run without key errors.
+2. Confirm **Configure AWS credentials (OIDC)** step succeeds.
+3. Confirm the full pipeline completes — MatchMaker Lambda deploy, S3 client sync, and game-server deploy via SSM (this was the **first CI/CD path before CodeDeploy** was added in [5.6](5.6-CodeDeploy/)).
+
+![First CI/CD pipeline succeeded via OIDC (pre-CodeDeploy)](/images/5-Workshop/image18.png)
+
+![MatchMaker `live` alias created after deploy](/images/5-Workshop/image19.png)
 
 ## Expected outcome
 

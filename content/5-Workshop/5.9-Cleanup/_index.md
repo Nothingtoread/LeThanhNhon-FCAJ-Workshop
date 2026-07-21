@@ -17,35 +17,53 @@ Document the **teardown procedure** for the internship report. Screenshots were 
 3. Screenshot the confirmation dialog showing resource names.
 4. Click **Cancel** (do not confirm deletion).
 
+![Cleaning up resources](/images/5-Workshop/image39.png)
+
 ## Teardown order (recommended)
 
 Delete dependencies before foundations:
 
-| Order | Service | Resources |
-|-------|---------|-----------|
-| 1 | CodeDeploy | `FightingGameMatchmakerDeploy`, `FightingGameServerDeploy`, deployment groups |
-| 2 | Auto Scaling | `FightingGameServerASG` (disable warm pool first if needed) |
-| 3 | EC2 | Terminate remaining game server instances |
-| 4 | EC2 | Delete launch template |
-| 5 | API Gateway | `FightingGameMatchmakerAPI` |
-| 6 | Lambda | `FightingGameMatchmaker`, `FightingGameMatchAnalytics` (remove triggers first) |
-| 7 | DynamoDB | `MatchmakingQueue`, `ActiveMatches`, `MatchAnalytics` |
-| 8 | S3 | Empty bucket objects → delete bucket |
-| 9 | VPC | Delete interface/gateway endpoints → subnets → security groups → VPC |
-| 10 | IAM | Delete roles created for deploy, Lambda, EC2 instance profile (after resources released) |
+### 1. CodeDeploy
 
-## Screenshot checklist
+![Delete CodeDeploy application](/images/5-Workshop/image40.png)
 
-- [ ] CodeDeploy applications and deployment groups
-- [ ] ASG and warm pool
-- [ ] EC2 instances (terminate dialog)
-- [ ] Launch template delete
-- [ ] API Gateway API delete
-- [ ] Lambda functions delete
-- [ ] DynamoDB tables delete
-- [ ] S3 empty bucket + delete bucket
-- [ ] VPC delete
-- [ ] IAM roles delete
+### 2. Auto Scaling Group
+
+![Delete ASG](/images/5-Workshop/image41.png)
+
+### 3. EC2 instances
+
+![Delete EC2 instances](/images/5-Workshop/image42.png)
+
+### 4. Launch template
+
+![Delete launch template](/images/5-Workshop/image43.png)
+
+### 5. API Gateway
+
+![Delete API from API Gateway](/images/5-Workshop/image44.png)
+
+### 6. Lambda functions
+
+![Delete Lambda functions](/images/5-Workshop/image45.png)
+
+### 7. DynamoDB tables
+
+![Delete DynamoDB tables](/images/5-Workshop/image46.png)
+
+### 8. S3 bucket
+
+![Emptying S3 bucket](/images/5-Workshop/image47.png)
+
+![Delete S3 bucket](/images/5-Workshop/image48.png)
+
+### 9. VPC
+
+![Delete VPC](/images/5-Workshop/image49.png)
+
+### 10. IAM roles
+
+Delete deploy roles, Lambda roles, and EC2 instance profile role after all dependent resources are removed.
 
 ## Report usage
 

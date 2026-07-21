@@ -6,24 +6,28 @@ chapter: false
 pre: " <b> 5.6. </b> "
 ---
 
-## Mục tiêu
+## Phần A — Lambda MatchMaker
 
-Deploy tự động **Lambda MatchMaker** (canary alias `live`) và **fleet EC2** qua CodeDeploy + GitHub Actions.
+![Publish version mới](/images/5-Workshop/image20.png)
 
-## Phần A — Lambda
+![Dormant prod stage](/images/5-Workshop/image22.png)
 
-1. Publish version mới, trỏ alias **`live`**.
-2. CodeDeploy app `FightingGameMatchmakerDeploy` — config kiểu linear 10%/phút.
-3. CI upload zip, tạo deployment, chờ hoàn tất.
+![Dormant prod stage (tiếp)](/images/5-Workshop/image23.png)
 
-## Phần B — EC2
+![Redeploy live versioning](/images/5-Workshop/image21.png)
 
-1. Cài **CodeDeploy agent** trên Ubuntu 24.04 — patch `.deb` `ruby3.2` → `ruby3.3` (xem lệnh đầy đủ bản EN).
-2. Cập nhật launch template và warm pool có agent.
-3. App `FightingGameServerDeploy`, group `FightingGameServer-fleet`, tag `Role=FightingGameServer`.
-4. `appspec.yml` + hooks: BeforeInstall, AfterInstall, ApplicationStart (health-check retry), ValidateService.
-5. CI đóng gói `fighting-game.env` trong zip; sửa CRLF `application_start.sh`.
+![Tạo role CodeDeploy](/images/5-Workshop/image24.png)
 
-## Xác minh
+## Phần B — EC2 fleet
 
-Deployment **Succeeded** trên console; game server chạy binary mới cổng 9000.
+Cài CodeDeploy agent (patch Ruby 3.3) — xem lệnh đầy đủ bản EN.
+
+![Cập nhật launch template](/images/5-Workshop/image25.png)
+
+![Warm pool & Spot với agent](/images/5-Workshop/image26.png)
+
+![Tạo CodeDeploy EC2 application](/images/5-Workshop/image27.png)
+
+![Cấu hình deployment group](/images/5-Workshop/image28.png)
+
+![CodeDeploy job thành công](/images/5-Workshop/image29.png)

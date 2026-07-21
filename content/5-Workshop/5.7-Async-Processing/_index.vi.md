@@ -8,19 +8,28 @@ pre: " <b> 5.7. </b> "
 
 ## Mục tiêu
 
-**Flow E** — copy dữ liệu trận đã kết thúc từ `ActiveMatches` sang `MatchAnalytics` qua **DynamoDB Streams** + Lambda.
+Flow E — copy dữ liệu trận đã kết thúc sang `MatchAnalytics` qua DynamoDB Streams.
 
-## Các bước
+![Tổng quan async processing](/images/5-Workshop/image30.png)
 
-1. Bật stream `ActiveMatches` — view **NEW_AND_OLD_IMAGES**.
-2. Tạo bảng `MatchAnalytics`.
-3. Role `FightingGameMatchAnalyticsRole` — đọc stream, ghi analytics.
-4. Deploy Lambda `FightingGameMatchAnalytics`.
-5. Event source mapping từ stream.
-6. **Game server:** `markMatchFinished` — `status=finished`, winner, `endedAt`, player id = Cognito `sub`.
-7. **Consumer:** copy khi MODIFY finished; xử lý REMOVE khi rematch.
-8. Chơi trận test → kiểm tra `MatchAnalytics` và CloudWatch Logs.
+## DynamoDB
 
-## Thiết kế
+![Thiết lập DynamoDB](/images/5-Workshop/image31.png)
 
-Rematch xóa `ActiveMatches`; analytics lưu ở bảng riêng trước khi xóa.
+## IAM & Lambda analytics
+
+![Match analytic role](/images/5-Workshop/image34.png)
+
+![Stream reading policy](/images/5-Workshop/image35.png)
+
+![Role MatchAnalytic Lambda](/images/5-Workshop/image36.png)
+
+![Match Analytic Lambda](/images/5-Workshop/image37.png)
+
+## Xác minh
+
+![Finished state trong DynamoDB](/images/5-Workshop/image32.png)
+
+![Chi tiết finished state](/images/5-Workshop/image33.png)
+
+![Dữ liệu DynamoDB](/images/5-Workshop/image38.png)

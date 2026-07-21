@@ -19,12 +19,16 @@ Provision a **Spot EC2 fleet** with a **warm pool** so MatchMaker can assign pla
    - Value: `FightingGameServer`
 4. Save. MatchMaker discovers hosts via `ec2:DescribeInstances` filtered on this tag.
 
+![Tag the current game server](/images/5-Workshop/image2.png)
+
 ## Step 2 — Bake an AMI
 
 1. With the game server instance **stopped or running** (prefer stopped for consistency), select it.
 2. **Actions → Image and templates → Create image**.
 3. Name: e.g. `FightingGameServer-v1`.
 4. Wait until AMI status is **available** in **AMIs**.
+
+![Bake AMI from that instance](/images/5-Workshop/image3.png)
 
 ## Step 3 — Create Spot launch template
 
@@ -37,6 +41,8 @@ Provision a **Spot EC2 fleet** with a **warm pool** so MatchMaker can assign pla
 7. **User data:** script to pull server bundle from S3 on boot (if not already in AMI).
 8. Create template.
 
+![Create launch template (Spot)](/images/5-Workshop/image4.png)
+
 ## Step 4 — Create Auto Scaling Group with warm pool
 
 1. **EC2 → Auto Scaling Groups → Create ASG**.
@@ -46,6 +52,8 @@ Provision a **Spot EC2 fleet** with a **warm pool** so MatchMaker can assign pla
 5. **Capacity:** set min/desired per project needs; enable **warm pool** so instances stay **running** and ready.
 6. **Health checks:** EC2 status + optional custom (port 9000).
 7. Create ASG and verify instances launch with tag `Role=FightingGameServer`.
+
+![Create ASG warm pool](/images/5-Workshop/image5.png)
 
 ## Step 5 — Verify fleet health
 

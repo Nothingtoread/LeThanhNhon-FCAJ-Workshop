@@ -29,6 +29,16 @@ Grant the MatchMaker Lambda role permissions to:
    - **CloudWatch Logs** (optional agent logs).
 4. Create **instance profile** and attach to launch template ([5.2](5.2-EC2-Fleet/)).
 
+![Roles for FightingGameServerInstanceRole](/images/5-Workshop/image15.png)
+
+![FightingGameServerInstanceRole policies](/images/5-Workshop/image16.png)
+
+### Modify IAM role
+
+Update the instance role when deploy and match-finish features require additional DynamoDB or CodeDeploy permissions.
+
+![Modify IAM role](/images/5-Workshop/image17.png)
+
 ## Step 3 — GitHub Actions deploy role
 
 Role name used in CI: `GitHubActionsFightingGameDeploy`.

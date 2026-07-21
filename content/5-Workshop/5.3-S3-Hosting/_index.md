@@ -17,6 +17,8 @@ Host the **browser game client** (HTML, JS, sprites, sounds) from S3 static webs
 3. Region: `ap-southeast-1`.
 4. Block Public Access: adjust as needed for static website demo (see policy below).
 
+![Create the S3 bucket and configure](/images/5-Workshop/image6.png)
+
 ## Step 2 — Enable static website hosting
 
 1. Open bucket → **Properties → Static website hosting → Enable**.
@@ -24,10 +26,14 @@ Host the **browser game client** (HTML, JS, sprites, sounds) from S3 static webs
 3. Error document (optional): `index.html` for SPA-style routing.
 4. Note the **website endpoint** URL.
 
+![Static website hosting](/images/5-Workshop/image7.png)
+
 ## Step 3 — Bucket policy (public read for demo)
 
 1. **Permissions → Bucket policy** — allow `s3:GetObject` for `arn:aws:s3:::fighting-game-assets-508768431157/*` with principal `*` (demo only; tighten for production).
 2. Save and verify no policy errors.
+
+![Bucket policy (public read for demo)](/images/5-Workshop/image8.png)
 
 ## Step 4 — Configure CORS
 

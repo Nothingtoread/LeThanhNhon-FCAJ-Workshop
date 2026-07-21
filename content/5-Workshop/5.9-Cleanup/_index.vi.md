@@ -8,21 +8,26 @@ pre: " <b> 5.9. </b> "
 
 ## Mục tiêu
 
-Tài liệu hóa **quy trình teardown** cho báo cáo thực tập — chụp màn hình dialog xác nhận xóa rồi **Cancel** (không xóa thật).
+Tài liệu teardown — chụp dialog xác nhận xóa rồi **Cancel**.
 
-## Thứ tự đề xuất
+![Dọn dẹp tài nguyên](/images/5-Workshop/image39.png)
 
-1. CodeDeploy (Lambda + EC2 apps/groups)
-2. ASG `FightingGameServerASG`
-3. EC2 instances
-4. Launch template
-5. API Gateway `FightingGameMatchmakerAPI`
-6. Lambda `FightingGameMatchmaker`, `FightingGameMatchAnalytics`
-7. DynamoDB `MatchmakingQueue`, `ActiveMatches`, `MatchAnalytics`
-8. S3 empty + delete bucket
-9. VPC endpoints → subnets → SG → VPC
-10. IAM roles (sau khi tài nguyên đã gỡ)
+![Xóa CodeDeploy](/images/5-Workshop/image40.png)
 
-## Checklist screenshot
+![Xóa ASG](/images/5-Workshop/image41.png)
 
-CodeDeploy, ASG, EC2 terminate, launch template, API GW, Lambda, DynamoDB, S3, VPC, IAM — mỗi mục một ảnh dialog xác nhận.
+![Xóa EC2](/images/5-Workshop/image42.png)
+
+![Xóa launch template](/images/5-Workshop/image43.png)
+
+![Xóa API Gateway](/images/5-Workshop/image44.png)
+
+![Xóa Lambda](/images/5-Workshop/image45.png)
+
+![Xóa DynamoDB](/images/5-Workshop/image46.png)
+
+![Empty S3 bucket](/images/5-Workshop/image47.png)
+
+![Xóa S3 bucket](/images/5-Workshop/image48.png)
+
+![Xóa VPC](/images/5-Workshop/image49.png)

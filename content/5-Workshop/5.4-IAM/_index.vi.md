@@ -8,12 +8,22 @@ pre: " <b> 5.4. </b> "
 
 ## Mục tiêu
 
-Cấu hình IAM cho MatchMaker Lambda, EC2 game server, GitHub Actions và CodeDeploy.
+Cấu hình IAM cho MatchMaker Lambda, EC2, GitHub Actions và CodeDeploy.
 
-## Các bước
+## Bước 1 — MatchMaker Lambda role
 
-1. **MatchMaker Lambda role** — DynamoDB (`MatchmakingQueue`, `ActiveMatches`), EC2 `DescribeInstances`, (tùy chọn) security group động, VPC access sau này.
-2. **`FightingGameServerInstanceRole`** — S3 đọc assets, DynamoDB ghi `ActiveMatches` khi match kết thúc, gắn instance profile vào launch template.
-3. **`GitHubActionsFightingGameDeploy`** — trust OIDC GitHub repo `Nothingtoread/fighting-game`; quyền S3, Lambda, CodeDeploy.
-4. **CodeDeploy service roles** — riêng cho Lambda vs EC2 (`CodeDeployServiceRoleForEC2` + `AWSCodeDeployRole`).
-5. **`FightingGameMatchAnalyticsRole`** — đọc DynamoDB stream `ActiveMatches`, ghi `MatchAnalytics`.
+Quyền DynamoDB, EC2 `DescribeInstances`, CloudWatch Logs, VPC (sau này).
+
+## Bước 2 — FightingGameServerInstanceRole
+
+![Role FightingGameServerInstanceRole](/images/5-Workshop/image15.png)
+
+![Policies instance role](/images/5-Workshop/image16.png)
+
+### Chỉnh sửa IAM role
+
+![Modify IAM role](/images/5-Workshop/image17.png)
+
+## Bước 3–5
+
+GitHub deploy role, CodeDeploy service roles, `FightingGameMatchAnalyticsRole` — xem bản tiếng Anh cho chi tiết.

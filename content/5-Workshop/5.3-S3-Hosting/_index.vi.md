@@ -8,17 +8,24 @@ pre: " <b> 5.3. </b> "
 
 ## Mục tiêu
 
-Host **browser client** (HTML, JS, asset) qua S3 static website; CI sync mỗi lần deploy.
+Host browser client qua S3 static website.
 
-## Các bước
+## Bước 1 — Tạo bucket
 
-1. Tạo bucket `fighting-game-assets-508768431157` tại `ap-southeast-1`.
-2. Bật **static website hosting** — index `index.html`.
-3. **Bucket policy** public read (demo).
-4. **CORS** cho origin website và API/Cognito từ browser.
-5. Upload bundle client; kiểm tra endpoint website.
-6. GitHub Actions `deploy.yml` sync build + sinh `src/config.js` từ secrets.
+![Tạo và cấu hình S3 bucket](/images/5-Workshop/image6.png)
 
-## Lưu ý
+## Bước 2 — Static website hosting
 
-S3 website là HTTP; cần CloudFront nếu demo yêu cầu HTTPS/`wss://`.
+![Static website hosting](/images/5-Workshop/image7.png)
+
+## Bước 3 — Bucket policy
+
+![Bucket policy (public read)](/images/5-Workshop/image8.png)
+
+## Bước 4 — CORS
+
+Cấu hình CORS cho origin website và API/Cognito từ browser.
+
+## Bước 5–6 — Upload bundle & CI
+
+Upload client; GitHub Actions sync qua `deploy.yml`.

@@ -20,9 +20,17 @@ Automate **zero-downtime deployments** for MatchMaker **Lambda** (alias traffic 
 2. Point the **`live` alias** at the new version for production traffic.
 3. Use CodeDeploy deployment configuration (e.g. `CodeDeployDefault.LambdaLinear10PercentEvery1Minute`) for gradual shift (~10 minutes for full cutover).
 
+![Publishing new version](/images/5-Workshop/image20.png)
+
 ### Step 2 — API Gateway stage management
 
 - During canary deploys, manage **active vs dormant** API stages so traffic follows the `live` alias without breaking in-flight matchmaking.
+
+![Dormant prod stage](/images/5-Workshop/image22.png)
+
+![Dormant prod stage (continued)](/images/5-Workshop/image23.png)
+
+![Redeploy for live versioning](/images/5-Workshop/image21.png)
 
 ### Step 3 — CodeDeploy application (Lambda)
 
@@ -30,6 +38,8 @@ Automate **zero-downtime deployments** for MatchMaker **Lambda** (alias traffic 
 2. Name: `FightingGameMatchmakerDeploy`.
 3. Deployment group linked to MatchMaker function + `live` alias.
 4. Service role: Lambda CodeDeploy service role (from [5.4](5.4-IAM/)).
+
+![Create role for CodeDeploy](/images/5-Workshop/image24.png)
 
 ### Step 4 — CI trigger
 
@@ -60,6 +70,10 @@ sudo systemctl status codedeploy-agent
 1. Update **launch template** so new Spot instances include the agent.
 2. Refresh **warm pool** instances (terminate old, let ASG replace) or run install on each warm instance.
 
+![Update launch template with CodeDeploy agent](/images/5-Workshop/image25.png)
+
+![Warm pool and Spot instances with CodeDeploy agent](/images/5-Workshop/image26.png)
+
 ### Step 3 — CodeDeploy EC2 application
 
 1. **CodeDeploy → Create application** → Compute platform: **EC2/On-premises**.
@@ -67,6 +81,10 @@ sudo systemctl status codedeploy-agent
 3. **Deployment group:** `FightingGameServer-fleet`.
 4. Target: EC2 instances tagged `Role=FightingGameServer`.
 5. Service role: `CodeDeployServiceRoleForEC2` with `AWSCodeDeployRole` (not the Lambda deploy role).
+
+![Create CodeDeploy EC2 application](/images/5-Workshop/image27.png)
+
+![EC2 deployment group config](/images/5-Workshop/image28.png)
 
 ### Step 4 — AppSpec and lifecycle scripts
 
@@ -86,6 +104,8 @@ Repository includes `appspec.yml` and scripts:
 1. CI builds `game-server.zip`, registers revision, creates deployment.
 2. Monitor **CodeDeploy → Deployments** until **Succeeded**.
 3. Verify new binary on fleet and successful match on port 9000.
+
+![Successful CodeDeploy job](/images/5-Workshop/image29.png)
 
 ---
 

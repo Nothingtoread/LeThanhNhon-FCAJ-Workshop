@@ -8,6 +8,8 @@ pre: " <b> 5. </b> "
 
 # Workshop: Fighting Game AWS Backend — Triển khai thực tế
 
+![Ảnh chụp workshop](/images/5-Workshop/image1.png)
+
 Các bước thực hành cho backend game multiplayer **serverless + EC2 Spot** đã mô tả trong proposal thực tập. Phần này ghi lại hạ tầng và CI/CD em phụ trách trên dự án [fighting-game](https://github.com/Nothingtoread/fighting-game).
 
 **Region:** `ap-southeast-1`  
