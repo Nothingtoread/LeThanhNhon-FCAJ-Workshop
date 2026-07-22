@@ -1,0 +1,63 @@
+{{- $lang := .Get "lang" | default "en" -}}
+{{- $projectURL := "http://fighting-game-assets-508768431157.s3-website-ap-southeast-1.amazonaws.com/" -}}
+{{- $repoURL := "https://github.com/Nothingtoread/fighting-game" -}}
+{{- $projectLabel := "Project Link" -}}
+{{- $repoLabel := "Repository" -}}
+{{- if eq $lang "vi" -}}
+  {{- $projectLabel = "Liên kết dự án" -}}
+  {{- $repoLabel = "Repository" -}}
+{{- end -}}
+
+<div class="report-project-links">
+  <a class="report-link-card" href="{{ $projectURL }}" target="_blank" rel="noopener noreferrer" aria-label="{{ $projectLabel }}">
+    <span class="report-link-title">{{ $projectLabel }}</span>
+    <span class="report-link-icon"><i class="fas fa-gamepad" aria-hidden="true"></i></span>
+  </a>
+  <a class="report-link-card" href="{{ $repoURL }}" target="_blank" rel="noopener noreferrer" aria-label="{{ $repoLabel }}">
+    <span class="report-link-title">{{ $repoLabel }}</span>
+    <span class="report-link-icon"><i class="fab fa-github" aria-hidden="true"></i></span>
+  </a>
+</div>
+
+<style>
+  .report-project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0 0 1.75rem;
+  }
+  .report-link-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 9rem;
+    padding: 0.9rem 1.2rem;
+    border: 2px solid #f58220;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #fff8f2 0%, #ffffff 100%);
+    color: #333;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(245, 130, 32, 0.15);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+  .report-link-card:hover,
+  .report-link-card:focus {
+    color: #d96d10;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(245, 130, 32, 0.28);
+    background: #fff3e8;
+  }
+  .report-link-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 0.55rem;
+    text-align: center;
+  }
+  .report-link-icon {
+    font-size: 2rem;
+    line-height: 1;
+    color: #f58220;
+  }
+</style>
