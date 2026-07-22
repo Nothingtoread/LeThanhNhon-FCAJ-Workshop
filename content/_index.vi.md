@@ -27,6 +27,12 @@ chapter: false
 
 &emsp; **Thời gian thực tập:** Từ ngày 05/05/2025 đến ngày 30/07/2025
 
+{{% notice tip %}}
+&emsp; **Project Link:** [http://fighting-game-assets-508768431157.s3-website-ap-southeast-1.amazonaws.com/](http://fighting-game-assets-508768431157.s3-website-ap-southeast-1.amazonaws.com/)
+
+&emsp; **GitHub:** [https://github.com/Nothingtoread/fighting-game](https://github.com/Nothingtoread/fighting-game)
+{{% /notice %}}
+
 ![Ảnh đại diện](/images/avatar.jpg)
 
 ### Nội dung báo cáo

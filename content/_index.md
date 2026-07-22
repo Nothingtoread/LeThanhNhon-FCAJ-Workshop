@@ -27,6 +27,12 @@ chapter: false
 
 &emsp; **Internship Duration:** From 05/05/2025 to 30/07/2025
 
+{{% notice tip %}}
+&emsp; **Project Link:** [http://fighting-game-assets-508768431157.s3-website-ap-southeast-1.amazonaws.com/](http://fighting-game-assets-508768431157.s3-website-ap-southeast-1.amazonaws.com/)
+
+&emsp; **GitHub:** [https://github.com/Nothingtoread/fighting-game](https://github.com/Nothingtoread/fighting-game)
+{{% /notice %}}
+
 ![Profile picture](/images/avatar.jpg)
 
 ### Report Content
